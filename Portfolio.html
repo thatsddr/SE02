@@ -14472,7 +14472,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In Asymptotic Notation, we only consider the fastest-growing term without any multiplicative constant. E.g.: in the example above $T(n) = 5n + 6$ is $O(n)$ and not $O(5n)$</p>
+<p>In Asymptotic Notation, we only consider the fastest-growing term without any multiplicative constant. E.g.: in the example above $T(n) = 5n + 6$ is $O(n)$ and not $O(5n)$.</p>
 
 </div>
 </div>
@@ -14563,12 +14563,12 @@ such that $T(n) ≥ k_{1}·f(n)$ and $T(n) ≤ k_{2}·f(n)$ for large enough $n$
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="1.3.4.-Working-with-the-Asymptotic-Notation">1.3.4. Working with the Asymptotic Notation<a class="anchor-link" href="#1.3.4.-Working-with-the-Asymptotic-Notation">&#182;</a></h3><ol>
-<li><p>Addition</p>
+<li><p>Addition:</p>
 <p>We can sum two functions together and the result will be the dominant one:
- $f(n) + g(n) = Θ(max(f(n), g(n)))$</p>
+ $f(n) + g(n) = Θ(max(f(n), g(n)))$.</p>
 </li>
-<li><p>Multiplication</p>
-<p>Multiplying a function by a constant will result in the constant being ignored. If instead, we are multiplying two functions, we proceed as follows: $Θ(f(n))·Θ(g(n)) = Θ(f(n)·g(n))$</p>
+<li><p>Multiplication:</p>
+<p>Multiplying a function by a constant will result in the constant being ignored. If instead, we are multiplying two functions, we proceed as follows: $Θ(f(n))·Θ(g(n)) = Θ(f(n)·g(n))$.</p>
 </li>
 </ol>
 <p><strong>The same rules also apply to Big O and Big Ω</strong></p>
@@ -15244,19 +15244,19 @@ Linked lists are made up of "Nodes", the first one of which is called Head. Ever
 <p>Searching an element by their index is a very common operation in string manipulation, and thanks to the value of the inner nodes this operation can be done on Ropes with time complexity of $O(log(n))$.</p>
 <p>To understand how that is possible let's consider an example, finding the character with at the position $i=8$ in the rope in the image above. We start by comparing $i$ to the value of the root (which in this case holds the value of the total length), and we quickly determine if the index is part of the string. Since it is smaller than the value of A, we move to A's left child (B). we compare $i$ to the value of B and since 8 is smaller than 9 we move to B's left child. We compare $i$ to the value of C (6) and since 8 is bigger, we move to  C's right child (F) and since we're moving to the right we update $i$ to be $i-C$ (8-6 = 2), and since F is a leaf we access the child at position $i$ (which is now 2) of the substring (y), which is the 8th character of the whole string.</p>
 </li>
-<li><p>Concat</p>
+<li><p>Concat:</p>
 <p>To concatenate 2 Ropes we just need to assign them to a new common root node with the value equal to the sum of the length of the substrings that descend from its new left child. This operation can be made in $O(1)$ time complexity, but computing the value for the new root node is an operation that has a time complexity of $O(h)$, where $h$ is the height of the tree and is equal to $log(n)$ in a balanced tree.</p>
 </li>
-<li><p>Split</p>
+<li><p>Split:</p>
 <p>When splitting a string starting from an index we need to make a distinction between 2 major cases: we need to start splitting after the last character of a leaf, or we need to start splitting starting from a middle character of a leaf. If our case is the latter, we assign 2 children to the leaf (which becomes an inner node), the left one containing the character that we don't need to split, and the right one containing the characters that we need to split.</p>
 <p>After finding the leaf from which we need to split the Rope, we separate the nodes at the right of that leaf and we fix the weight of the inner nodes that were ancestors of the nodes we separated. We then assign the split nodes to a new common root node.</p>
 <p>At this point, it may be necessary to rebalance both Ropes.</p>
 <p>This operation has a time complexity of $O(log(n))$ since it is the sum of the time complexities of the operations that are needed to complete this operation;</p>
 </li>
-<li><p>Insert</p>
+<li><p>Insert:</p>
 <p>Inserting a Rope in the middle of another Rope is an operation that can be done by splitting the original Rope, concatenate the Rope we need to insert, and then concatenate the right part of the node we originally split. Rebalancing the tree may be also required. The time complexity of this operation will be the sum of the time complexities of 1 split operation and 2 concatenation operations $(O(log(n))$;</p>
 </li>
-<li><p>Delete</p>
+<li><p>Delete:</p>
 <p>To delete a substring at the middle of a Rope, we need to split the original rope starting at the first character that we want to delete. We then split the resulting right Rope starting after the last character that we need to delete, and we finally concatenate the left rope of the first split operation with the right Rope of the last split operation. This operation will also have a time complexity given by the sum of the operations that it uses, which will result in time complexity of $O(log(n))$.</p>
 </li>
 </ul>
@@ -15596,7 +15596,7 @@ The space complexity of an Adjacency Matrix is $O(|V|^{2})$.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">binary_search</span> <span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
@@ -15713,7 +15713,7 @@ The space complexity of an Adjacency Matrix is $O(|V|^{2})$.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">selection_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
@@ -15803,10 +15803,10 @@ The space complexity of an Adjacency Matrix is $O(|V|^{2})$.</p>
 <p>Here we can see a simple implementation in python:</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
@@ -15830,6 +15830,27 @@ The space complexity of an Adjacency Matrix is $O(|V|^{2})$.</p>
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[0, 1, 2, 2, 3, 3, 3, 4, 5, 6, 6, 7, 8, 9]
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -15882,7 +15903,7 @@ The space complexity of an Adjacency Matrix is $O(|V|^{2})$.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
@@ -15996,7 +16017,7 @@ This situation can be avoided by picking a random pivot (which does not guarante
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
@@ -16104,7 +16125,7 @@ Because of this, the time complexity of this algorithm will be $Θ(log(n))$.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">heapify</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
@@ -16225,7 +16246,7 @@ Because of this, the time complexity of this algorithm will be $Θ(log(n))$.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">counting_sort</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
@@ -16343,7 +16364,7 @@ Because of this, the time complexity of this algorithm will be $Θ(log(n))$.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">visited</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -16440,7 +16461,7 @@ Because of this, the time complexity of this algorithm will be $Θ(log(n))$.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
@@ -16549,7 +16570,7 @@ Because of this, the time complexity of this algorithm will be $Θ(log(n))$.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">heapq</span>
@@ -16725,7 +16746,7 @@ This additional information is calculated in this case by a function $f(n)=g(n)+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">heapq</span>
@@ -16868,7 +16889,7 @@ This additional information is calculated in this case by a function $f(n)=g(n)+
 <p>With an uninformative heuristic function, this algorithm will behave like Dijkstra's algorithm, and potentially visit every vertex and edge in the graph, an operation that has a time complexity of $O(|V|+|E|)$. This time complexity can also be expressed as $O(b^{d})$, where $b$ is the average number of adjacent vertices and $d$ is the number of edges between the starting node and the node to find.</p>
 <p>In the best case for this algorithm, the heuristic function is so efficient that only the nodes in the path between the two vertices are ever explored, its time complexity, in this case, will be $Ω(d)$, where $d$ is the number of edges between the 2 nodes.</p>
 <p><strong>Space Complexity Analysis</strong></p>
-<p>This Algorithm keeps track of all the vertices it visits, so in the worst case, its time complexity will be of $O(b^{d})$.</p>
+<p>This Algorithm keeps track of all the vertices it visits, so in the worst case, its space complexity will be of $O(V)$.</p>
 
 </div>
 </div>
@@ -16913,7 +16934,7 @@ This additional information is calculated in this case by a function $f(n)=g(n)+
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>A street network is represented by the OSMnx library, or in general by OpenStreetMap, with a series of vertices that represent intersections, the beginning or end of a road, or a change in the topography of a road.<br/>
-The properties of each vertex include: a unique id, a set of coordinates, the type of road to which it belongs, optionally the max speed (in mph or km/h) and the road name, a list of adjacent vertices with all of their properties and the distance in meters from the current vertex. OSMnx uses another Library, <a href="https://networkx.org">NetworX</a>, to store the all of these informations.<br/>
+The properties of each vertex include: a unique id, a set of coordinates, the type of road to which it belongs, optionally the max speed (in mph or km/h) and the road name, a list of adjacent vertices with all of their properties and the distance in meters from the current vertex. OSMnx uses another Library, <a href="https://networkx.org">NetworkX</a>, to store the all of these informations.<br/>
 To make the maps more clear, in the examples that we will see in this section, we will simplify the map view to hide the nodes that are not interesctions or the beginning or end of a road. You can see the difference in the images below.</p>
 
 </div>
@@ -17042,7 +17063,7 @@ All the algorithms will share some similar code, indeed the only code that will 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>To find the shortest path we consider the time needed to travel between two vertices as the cost to get to a vertex. However, the time needed to reach an adjacent vertex is not among the properties of our nodes. We therefore need to calculate it using the <code>distance</code> property, which can be easily retrieved, and either the <code>maxspeed</code> property (for a more precise result) or the <code>highway</code> property, which returns theroad type and we can estimate the maximum speed allowed on that using some default values. If for some reason both properties are not present, we will use a default value. Once we have the distance and the speed, we can easily calculate the time.</p>
+<p>To find the shortest path we consider the time needed to travel between two vertices as the cost to get to a vertex. However, the time needed to reach an adjacent vertex is not among the properties of our nodes. We therefore need to calculate it using the <code>distance</code> property, which can be easily retrieved, and either the <code>maxspeed</code> property (for a more precise result) or the <code>highway</code> property, which returns the road type and we can estimate the maximum speed allowed on that using some default values. If for some reason both properties are not present, we will use a default value. Once we have the distance and the speed, we can easily calculate the time.</p>
 <p>Both of the algorithms in this case will store the default speed for different types of road and will have 3 additional methods: <code>get_speed</code>, <code>is_mph</code>, and <code>to_ms</code>. These methods determine the speed of the current road, check if the speed is in miles per hour and convert the speed to meters/second respectively.</p>
 <p><strong>With Dijkstra's Algorithm</strong></p>
 <blockquote><p><a href="https://gist.github.com/thatsddr/30619e345c266b7f4a734b15c0781608">Code on GitHub</a></p>
@@ -17053,7 +17074,7 @@ All the algorithms will share some similar code, indeed the only code that will 
 <blockquote><p><a href="https://gist.github.com/thatsddr/3c5c3b6807cd66ba62af6f842445cc4a">Code on GitHub</a></p>
 </blockquote>
 <p>This algorithm differs from his shortest-path counterpart because of the methods needed to retirieve and convert the speed, the different way in which the cost to get to a vertex is calculated, and for the heuristic function. The heuristic function in this algorithm also calculates the distance between 2 points using the haversine function, but it also divides that value by the highest possible value of <code>maxspeed</code> so that the estimated cost is always an underestimate. In this way, we make sure that the path is always optimal.</p>
-<p>Like we saw before, the time complexity of the A* algorithm depends on tits heuristic and cannot be worst than $O(b^{d})$.</p>
+<p>Like we saw before, the time complexity of the A* algorithm depends on its heuristic and cannot be worst than $O(b^{d})$.</p>
 <p><strong>Results</strong></p>
 <p>By running both scripts, the paths found by the two algorithms on the same example route from Cupertino, CA to Mountain View, CA, will be the following:</p>
 <div style="display:flex; flex-direction:row;">
@@ -17083,7 +17104,7 @@ All the algorithms will share some similar code, indeed the only code that will 
         Terminal Output of the A* algorithm.
     </figcaption>
 </figure>
-</div><p>By looking at the terminal ouput of both algorithms, however, we can see an even bigger difference. The A* Algorithm explored 19.74% less vertices and 18.93% less edges while still finding the same path.<br/>This heuristic function can be improved in different ways, but it is important that its time complexity remains constant. If we really care about the performance of our algorithm but not about its optimality, we could use an heuristic function that does not guarantee optimality (in this case the fastest path) but explores less vertices. If we know the characteristics of the street network, or of a graph in general, we could create an heuristic that prioritizes some paths over others. In this case, we may want to prioritize faster roads, so what I came up with is an heuristic that looks like this:</p>
+</div><p>By looking at the terminal ouput of both algorithms, however, we can see a smaller difference. The A* Algorithm explored 19.74% less vertices and 18.93% less edges while still finding the same path.<br/>This heuristic function can be improved in different ways, but it is important that its time complexity remains constant. If we really care about the performance of our algorithm but not about its optimality, we could use an heuristic function that does not guarantee optimality (in this case the fastest path) but explores less vertices. If we know the characteristics of the street network, or of a graph in general, we could create an heuristic that prioritizes some paths over others. In this case, we may want to prioritize faster roads, so what I came up with is an heuristic that looks like this:</p>
 $$h(currentV,finalV,speed) = \frac{haversine(currentV,finalV)}{maxSpeed} * \frac{thresholdSpeed}{speed}$$<p>Basically this heuristic function calculates how much time it would take to get from the current vertex to the final vertex, and multiply this value by a treshold speed divided by the current speed. In this way, if we set our treshold to $25m/s$ ($90km/h$), all the vertices in roads with a higher max speed will have an even lower priority (which means that they will explored before) because we will multiply the estimate by a number which is less than 1. For all the roads with a max speed less than the treshold, the priority will be higher (and so they will be explored later). This heuristic could lead to overestimates in many different situations, but especially to find two vertices that are really far away, this could make the algorithm really more efficient.
 Let's try to apply this heuristic to our previous scenario to see what happens:</p>
 <figure>
